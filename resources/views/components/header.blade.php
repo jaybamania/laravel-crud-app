@@ -1,5 +1,5 @@
 <div class="heading">
-    <h1>Admin Panel</h1>
+    <h1>{{$header_title}}</h1>
 </div>
 <style>
     *{
@@ -12,5 +12,8 @@
         display:flex;
         justify-content:center;
         align-items:center;
+        position: sticky;
+        top:0;
+        z-index: 100;
     }
 </style>

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MembersForm;
+use App\Http\Controllers\MembersDisplay;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +27,14 @@ Route::get('/admin', function () {
 // Route::view('admin','admin');
 Route::view('add', 'add');
 
-Route::post('add',[UsersForm::class,'getData']);
+Route::post('add',[MembersForm::class,'add']);
+
+//Showing Members from DB
+Route::get('admin',[MembersDisplay::class,'showData']);
+
+//Update Data
+Route::get('edit/{id}',[MembersForm::class,'editData']);
+Route::post('edit/',[MembersForm::class,'update']);
+
+//Delete Data
+Route::get('delete/{id}',[MembersForm::class,'deleteData']);

@@ -1,28 +1,28 @@
-<x-header data="Add Member Form" />
+<x-header data="Edit Member Form" />
 <div class="mainbody">
 
 
-<form action="/add" method="POST">
+<form action="/edit" method="POST">
     @csrf
+    <input type="hidden" name="id" value="{{$info['id']}}" >
     <div class="singleform">
         <label>Name : </label>
-        <input type="text" name="name" id="name">
-        <span style="color:red">@error('name'){{$message}}@enderror</span>
+        <input type="text" name="name" value="{{$info['name']}}" id="name">
+        
     </div>
-    <div  class="singleform">
+    <div class="singleform">
         <label>Email : </label>
-        <input type="email" name="email"  id="email">
-        <span style="color:red">@error('email'){{$message}}@enderror</span>
+        <input type="email" name="email" value="{{$info['email']}}" id="email">
+        
     </div>
-    <div  class="singleform">
+    <div class="singleform">
         <label>Phone : </label>
-        <input type="text" name="phone"  id="phone">
-        <span style="color:red">@error('phone'){{$message}}@enderror</span>
+        <input type="text" name="phone" value="{{$info['phone']}}" id="phone">
     </div>
-    <div  class="singleform">
+    <div class="singleform">
         <label>Address : </label>
         <textarea  name="address" id="address">
-        
+            {{$info['address']}}   
         </textarea>
         <span style="color:red">@error('address'){{$message}}@enderror</span>
     </div>
